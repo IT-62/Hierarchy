@@ -26,7 +26,7 @@ public class Passenger {
 
     @Override
     public String toString() {
-        return "Full name: " + firstName + secondName + "\n"
+        return "Full name: " + firstName + " " + secondName + "\n"
                 + "Age: " + age + "\n";
     }
 }
