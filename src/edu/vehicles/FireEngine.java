@@ -1,10 +1,11 @@
 package edu.vehicles;
 
 import edu.options.VihecleEngineType;
-import edu.passengers.Passenger;
+import edu.passengers.Fireman;
 
-public class Car<T extends Passenger> extends Vehicle<T> {
-    public Car(String name, int yearOfIssue, int passengerCapacity, VihecleEngineType engineType){
+public class FireEngine extends Car<Fireman> {
+
+    public FireEngine(String name, int yearOfIssue, int passengerCapacity, VihecleEngineType engineType) {
         super(name, yearOfIssue, passengerCapacity, engineType);
     }
 
