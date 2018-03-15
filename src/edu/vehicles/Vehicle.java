@@ -34,6 +34,9 @@ public abstract class Vehicle<T extends Passenger> {
                 + "нет в этом транспорте");
     }
 
+    public int getCountOfPassengers(){
+        return passengers.size();
+    }
     @Override
     public abstract String toString();
 }
