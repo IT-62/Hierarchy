@@ -10,4 +10,9 @@ public class Bus extends Vehicle {
         super(name, yearOfIssue, passengerCapacity,engineType);
         this.appointmentType = appointmentType;
     }
+
+    @Override
+    public String toString() {
+        return null;
+    }
 }
