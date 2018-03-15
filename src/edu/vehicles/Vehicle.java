@@ -1,5 +1,7 @@
 package edu.vehicles;
 
+import edu.exceptions.NoFreePlacesException;
+import edu.exceptions.NoSuchPassengerException;
 import edu.options.VihecleEngineType;
 import edu.passengers.Passenger;
 
@@ -19,8 +21,17 @@ public abstract class Vehicle<T extends Passenger> {
         this.engineType = engineType;
     }
 
-    public void download(){
+    public void download(T passenger) throws NoFreePlacesException{
+        if(passengers.size() == passengerCapacity) throw new NoFreePlacesException("Места для пассажира " + passenger.getSecondName()
+                + " нашлось.");
+        else
+            passengers.add(passenger);
 
+    }
+
+    public void unload(T passanger) throws NoSuchPassengerException{
+        if(!passengers.contains(passanger)) throw new  NoSuchPassengerException("Пассажира " + passanger.getSecondName()
+                + "нет в этом транспорте");
     }
 
     @Override
