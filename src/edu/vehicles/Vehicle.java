@@ -2,7 +2,7 @@ package edu.vehicles;
 
 import edu.exceptions.NoFreePlacesException;
 import edu.exceptions.NoSuchPassengerException;
-import edu.options.VihecleEngineType;
+import edu.options.VehicleEngineType;
 import edu.passengers.Passenger;
 
 import java.util.HashSet;
@@ -13,8 +13,8 @@ public abstract class Vehicle<T extends Passenger> {
     protected int yearOfIssue;
     protected int passengerCapacity;
     protected Set<T> passengers = new HashSet<T>();
-    protected VihecleEngineType engineType;
-    public Vehicle(String name, int yearOfIssue, int passengerCapacity, VihecleEngineType engineType) {
+    protected VehicleEngineType engineType;
+    public Vehicle(String name, int yearOfIssue, int passengerCapacity, VehicleEngineType engineType) {
         this.name = name;
         this.yearOfIssue = yearOfIssue;
         this.passengerCapacity = passengerCapacity;
