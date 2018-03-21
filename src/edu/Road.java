@@ -1,5 +1,6 @@
 package edu;
 
+import edu.exceptions.NoSuchVehicleException;
 import edu.vehicles.Vehicle;
 
 import java.util.HashSet;
@@ -9,18 +10,20 @@ public class Road {
     public Set<Vehicle> vehicles = new HashSet<Vehicle>();
     public int getCountOfHumans() {
         int res = 0;
-        for (Vehicle vehicle:
-             vehicles) {
+        for (Vehicle vehicle : vehicles) {
             res += vehicle.getCountOfPassengers();
         }
         return res;
     }
 
-    public void addVehicle(Vehicle vahicle){
-        vehicles.add(vahicle);
+    public void addVehicle(Vehicle vehicle) {
+        vehicles.add(vehicle);
     }
 
-    public void removeVehicle(Vehicle vehicle){
-        vehicles.remove(vehicle);
+    public void removeVehicle(Vehicle vehicle) throws NoSuchVehicleException {
+        if(!vehicles.contains(vehicle))
+            throw new NoSuchVehicleException("Такой нет машины на дороге");
+        else
+            vehicles.remove(vehicle);
     }
 }
